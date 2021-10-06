@@ -1,0 +1,2 @@
+())
+# print("POP ->",L.popfront())
