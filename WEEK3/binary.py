@@ -30,5 +30,7 @@ def dec2bin(n):
 
 print(" ***Decimal to Binary use Stack***")
 m = input("Enter decimal number : ")
-print("Binary number : ",end='')
-print(dec2bin(int(m)))
+if int(m)==0 : print("Binary number : 0")
+else:
+    print("Binary number : ",end='')
+    print(dec2bin(int(m)))
