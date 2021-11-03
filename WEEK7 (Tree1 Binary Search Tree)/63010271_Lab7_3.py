@@ -31,15 +31,15 @@ class BST:
                         current = current.right
             return self.root
         
-    def in_order(self,root):
-        I = []
-        if not root:
-            return I
-        I = self.in_order(root.left)
-        I.append(root.data)
-        I = I + self.in_order(root.right)
-        return I
-        
+    def LessThanorEqual(self,root,data):
+        count = 0
+        if root == None :
+            return count
+        count += self.LessThanorEqual(root.left,data)
+        if root.data<=data:
+            count+=1
+        count += self.LessThanorEqual(root.right,data)
+        return count
 
         
     def printTree(self, node, level = 0):
@@ -56,9 +56,5 @@ count = 0
 for i in inp:
     root = T.insert(i)
 T.printTree(root)
-X = T.in_order(root)
-for i in range(len(X)):
-    if n >= X[i]:
-        count += 1
 print("-"*50)
-print("{}".format(count))
+print("{}".format(T.LessThanorEqual(root,n)))
